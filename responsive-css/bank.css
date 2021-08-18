@@ -1,0 +1,41 @@
+
+.bank{
+    border:1px solid black;
+    width:50%;
+    text-align: center;
+    margin: auto;
+}
+header {
+    min-height:20px;
+}
+header #branding{
+    border-bottom: 3px solid black;
+    display: flex;
+}
+ header #john p{
+    background-color: lightgreen;
+    /* border-color: lightgreen; */
+    width:60px;
+    height:50px;
+    margin-left: 50px;
+    min-height: auto;
+    text-align: center;
+    padding-top: 20px;
+    font-size: large;
+    border-radius: 50%;
+}
+header #para p{
+    /* margin-left: 20px;
+   padding-top: 10px; */
+   padding: -9px;
+   margin-left: 20px;
+   margin-top: 26px;
+   margin-bottom: -20px;
+
+    
+    
+}
+section .payment{
+   
+   
+}

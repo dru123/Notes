@@ -1,0 +1,186 @@
+<!-- autocomplete="off" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+ <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+<body>
+    <div class="container">
+     <div class="header">
+         <h2>Login form</h2>
+
+     </div>
+     <form class="form" id="form">
+             <div>
+        <div class="control">
+            <label for="Username">Username</label>
+            <input type="text" id="username"  autocomplete="off" placeholder="Enter your email"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation"></i>
+            <small>Error msg</small>
+        </div>
+        <div class="control">
+            <label for="email">Email</label>
+            <input type="email" id="email"  autocomplete="off" placeholder="Enter your email" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation"></i>
+            <small>Error msg</small>
+        </div>
+        <div class="control">
+            <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="off" placeholder="Enter your password"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation"></i>
+            <small>Error msg</small>
+        </div>
+        <div class="control">
+            <label for="cpaswrd">Confirm Password</label>
+            <input type="password" id="cpaswrd"  autocomplete="off" placeholder="Enter your password again"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation"></i>
+            <small>Error msg</small>
+            
+        </div>
+        <div class="btn">
+            <input type="submit" type="button"  value="Submit"/>
+
+        </div>
+
+    </div>
+     </form>
+    </div>
+    <script>
+//         const username=document.getElementById("username");
+//         const password=document.getElementById("password");
+//         const eamil=document.getElementById("email");
+//         const cpaswrd=document.getElementById("cpaswrd");
+
+//         form.addEventListener('submit',(e)=>{
+//                 e.preventDefault();
+//                 validate();
+//         })
+//         const isEmail=(email)=>{
+//         const atrate=email.indexOf('@');
+//         if(atrate<1)return false;
+//         const dot=email.lastindexOf('.');
+//         if(dot<atrate+2) return false;//@gm shoul be there
+//         if(dot===email.length-1)return false;//dot should not b in en\d
+//    return true;
+
+//         }
+//         function validate(){
+//             const user=username.value.trim();
+//             const pass=password.value.trim();
+//             const cpas=cpaswrd.value.trim();
+//             const emailVal=emai.value.trim();
+//             if(user===""){
+//                 setError(user,"  user cannot be null");
+//             }else if(user<=2){
+//                 setError(user,"mention proper name");
+//             }
+//             else{
+//                 setSuccess(user);
+//             }
+//             if(emailVal===""){
+//                 setError(emailVal,"enter proper email id")
+//             }
+//             else if(!isEmail(emailVal)){
+//                 setSuccess(emailVal)
+//             }
+//         }
+//         function setError(input,errormsg){
+//             const control=input.parentElement;
+//             const small=control.querySelector("small");
+//             control.className="control error";
+//             small.innerText=errormsg;
+//         }
+
+ const username=document.getElementById("username");
+ 
+ const password=document.getElementById("password");
+//  console.log(password);
+const email=document.getElementById("email");
+// console.log(email);
+const cpaswrd=document.getElementById("cpaswrd");
+
+ form.addEventListener('submit',(e)=>{
+     e.preventDefault();
+
+     valdate();
+ })
+ 
+ function valdate(){
+     const name=username.value.trim();
+     console.log(name);
+     const pass=password.value.trim();
+     console.log(pass);
+         const cpaswrdValue=cpaswrd.value.trim();
+         console.log(cpaswrdValue);
+         const emailValue=email.value.trim();
+         console.log(emailValue);
+//traversy media
+     if(name===""){
+         setError(username,"please enter name");
+     }else{
+         setSuccess(username);
+     }
+
+
+     if(emailValue==""){
+         
+         setError(email,"please enter  valid email");  }
+    else{
+        setSuccess(email);
+    }
+
+    if(pass===""){
+             setError(password," please enter password");
+
+    }else if(pass[0]!=pass[0].toUpperCase()){
+        setError(password,"first letter should be Capital");
+        
+    }else{
+        setSuccess(password);
+    }
+    if(cpaswrdValue!=pass){
+        setError(cpaswrd,"Password not match");
+    }else if(cpaswrdValue===""){
+        setError(cpaswrd,"please enter the confirm password");
+    }
+    else if(cpaswrdValue[0]!=cpaswrdValue[0].toUpperCase()){
+        setError(cpaswrdValue,"Password not match");
+        
+    }
+    else{
+        setSuccess(cpaswrd)
+    }
+}
+    function setSuccess(name){
+       
+        const control =name.parentElement;
+        console.log(control);
+      control.className="control success";
+      return ;
+    }
+
+   function setError(input,errormesgs){
+       console.log(input);
+       const control=input.parentElement;
+       
+       console.log(control);
+       const small=control.querySelector("small");
+       small.innerText=errormesgs;
+       console.log(small.innerText);
+
+       control.className="control error";
+    //    alert(errormesgs);
+    return;
+   }
+   </script>
+</body>
+</html>

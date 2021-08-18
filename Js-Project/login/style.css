@@ -1,0 +1,100 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+.control{
+    position: relative;
+    margin-bottom: 20px;
+}
+.control i{
+    position:absolute;
+    right:12px;
+    top:39px;
+    visibility: hidden;
+}
+.control.error i.fa-exclamation{
+    color:red;
+    border:red;
+    visibility: visible;
+}
+.control.success i.fa-check-circle{
+    color:lightgreen;
+    visibility: visible;
+}
+
+
+.container{
+    text-align: center;
+    width: calc( 100vw - 65vw );
+    max-width: 100%;
+  
+}
+.control small{
+    color:red;
+    visibility: hidden;
+    bottom:0px;
+    top:58px;
+    left:0;
+    position: absolute;
+}
+.control.error small{
+    visibility: visible;
+}
+.form{
+    text-align: center;
+    width: calc(100vw-65vw);
+}
+.header{
+    background-color:aqua;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+}
+.control.success input{
+    border-color:lightgreen;
+}
+.control.error input{
+    border-color:red;
+}
+ .control label{
+    display: inline;
+    margin-bottom: 5px;
+}
+.control input{
+    display: block;
+    border:2px solid #f0f0f0;
+    width: 100%;
+    padding: 10px;
+    justify-self: center;
+}
+.control input:focus{
+    outline: 0;
+    border-color:#777;
+}
+.form .btn{
+   
+    background:#74ebd5 ;
+    outline: none !important;
+    border: none;
+    border-radius: 6px;
+    display:block;
+    font-size: 16px;
+    width:100%;
+    padding:15px 0;
+    display: block;
+    color:white;
+    transition: all 1s ease;
+}
+.form .btn:hover{
+    background: linear-gradient(to right,#74ebd5,#9face6);
+}
+@media(max-width:998px){
+    .container{
+        width:calc( 100vw - 35vw );
+        max-width: 100%;
+    }
+}
